@@ -1,23 +1,26 @@
-const ingredients = [
-  'Potatoes',
-  'Mushrooms',
-  'Garlic',
-  'Tomatos',
-  'Herbs',
-  'Condiments',
-];
+ const ingredients = [
+    "Potatoes",
+    "Mushrooms",
+    "Garlic",
+    "Tomatos",
+    "Herbs",
+    "Condiments",
+  ];
 
-const list = document.querySelector('#ingredients')
+  // Отримуємо список ul#ingredients
+  const ingredientsList = document.getElementById("ingredients");
 
-// Використовуючи цикл forEach, проходимо через кожен елемент (ingredient) в масиві `ingredients`
-ingredients.forEach(function (element) {
+  // Проходимося по кожному елементу масиву ingredients
+  ingredients.forEach((ingredient) => {
+    // Створюємо новий елемент <li>
+    const listItem = document.createElement("li");
 
-  // Створюємо новий елемент `li`
-  const elLi = document.createElement('li');
-  
-  // Присвоюємо текстовий вміст (значення елементу) для нового створеного елементу `li`
-  elLi.innerText = element;
+    // Додаємо текстовий вміст з назвою інгредієнта
+    listItem.textContent = ingredient;
 
-  // Додаємо створений елемент `li` до кінця списку (ul) за допомогою методу `appendChild`
-  list.appendChild(elLi);
-});
+    // Додаємо клас "item" до елементу <li>
+    listItem.classList.add("item");
+
+    // Додаємо елемент <li> до списку <ul>
+    ingredientsList.appendChild(listItem);
+  });

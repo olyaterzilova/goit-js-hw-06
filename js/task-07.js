@@ -1,12 +1,12 @@
- // Отримуємо елементи, з якими будемо працювати
-  const fontSizeControl = document.getElementById('font-size-control');
-  const textSpan = document.getElementById('text');
+// Отримуємо посилання на елементи з DOM
+  const fontSizeControl = document.getElementById("font-size-control");
+  const textSpan = document.getElementById("text");
 
-  // Додаємо слухача події input до input#font-size-control
-  fontSizeControl.addEventListener('input', function () {
-    // Отримуємо поточне значення input#font-size-control
+  // Функція, яка буде викликатись при зміні значення поля вводу
+  function changeFontSize() {
     const fontSizeValue = fontSizeControl.value;
-
-    // Встановлюємо розмір тексту в спані textSpan з використанням властивості font-size
     textSpan.style.fontSize = `${fontSizeValue}px`;
-  });
+  }
+
+  // Додаємо обробник події input до поля вводу
+  fontSizeControl.addEventListener("input", changeFontSize);

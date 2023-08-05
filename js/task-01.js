@@ -1,19 +1,22 @@
 //  витягуєм елементи категорій
-const categories = document.querySelectorAll('ul#categories li.item');
 
-//  підраховуєм елементи категорій
-const countCategories = categories.length;
-console.log("Number of categories:", countCategories);
 
-// Проходимося циклом по масвы категорый
-categories.forEach(
-    function (category) {
-        
-        // дістаємо елементи які портібні для задачі
-        const title = category.querySelector('h2');
-        const liLength = category.querySelectorAll('li').length;
-        
-        console.log("Category: ", title.innerHTML);
-        console.log("Elements:", liLength);
-    }
-)
+  const categoriesList = document.getElementById("categories");
+  const categoriesItems = categoriesList.querySelectorAll(".item");
+
+  // Порахуємо кількість категорій
+  const numberOfCategories = categoriesItems.length;
+  console.log(`Number of categories: ${numberOfCategories}`);
+
+  // Проходимося по кожному елементу категорії
+  categoriesItems.forEach((item) => {
+    // Отримуємо заголовок елементу (h2) та усі підкатегорії (li) в ньому
+    const categoryName = item.querySelector("h2").textContent;
+    const subCategories = item.querySelectorAll("ul li");
+    const numberOfSubCategories = subCategories.length;
+
+    console.log(`Category: ${categoryName}`);
+    console.log(`Elements: ${numberOfSubCategories}`);
+  });
+
+
