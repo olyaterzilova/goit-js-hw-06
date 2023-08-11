@@ -1,6 +1,4 @@
 //  витягуєм елементи категорій
-
-
   const categoriesList = document.getElementById("categories");
   const categoriesItems = categoriesList.querySelectorAll(".item");
 
