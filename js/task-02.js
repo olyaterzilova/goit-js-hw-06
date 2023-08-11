@@ -11,7 +11,8 @@
   const ingredientsList = document.getElementById("ingredients");
 
   // Проходимося по кожному елементу масиву ingredients
-  ingredients.forEach((ingredient) => {
+const listItems = ingredients.map((ingredient) => {
+    
     // Створюємо новий елемент <li>
     const listItem = document.createElement("li");
 
@@ -19,8 +20,9 @@
     listItem.textContent = ingredient;
 
     // Додаємо клас "item" до елементу <li>
-    listItem.classList.add("item");
-
-    // Додаємо елемент <li> до списку <ul>
-    ingredientsList.appendChild(listItem);
+  listItem.classList.add("item");
+  
+  return listItem;
   });
+  // Додаємо елемент <li> до списку <ul>
+ingredientsList.append(...listItems);

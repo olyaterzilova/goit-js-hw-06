@@ -17,8 +17,8 @@ const galleryList = document.querySelector('.gallery');
 
 // Створюємо розмітку для кожного об'єкту у масиві images
 const galleryMarkup = images.map(image => `
-  <li>
-    <img src="${image.url}" alt="${image.alt}">
+  <li style="list-style: none">
+    <img src="${image.url}" alt="${image.alt}" width="300">
   </li>
 `).join('');
 

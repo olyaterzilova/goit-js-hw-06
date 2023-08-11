@@ -1,22 +1,22 @@
 const loginForm = document.querySelector('.login-form');
+const loginForm2 = document.querySelectorAll('.login-form');
 
-  loginForm.addEventListener('submit', function (event) {
-    event.preventDefault(); // Зупиняємо перезавантаження сторінки
 
-    // Отримуємо значення полів форми
-    const formData = new FormData(loginForm);
+loginForm.addEventListener('submit', function (event) {
+  event.preventDefault(); // Зупиняємо перезавантаження сторінки
+  
+// Зберігаємо значення полів в об'єкт
+  const formValues = {};
+  
+  // Отримуємо значення полів форми
+  formValues['emailValue'] = loginForm[0].value;
+  formValues['passwordValue'] = loginForm[1].value;
 
     // Перевіряємо, чи всі поля заповнені
-    if (formData.get('email') === '' || formData.get('password') === '') {
+    if (formValues['emailValue']=== '' || formValues['passwordValue'] === '') {
       alert('Всі поля повинні бути заповнені!');
       return;
     }
-
-    // Зберігаємо значення полів в об'єкт
-    const formValues = {};
-    formData.forEach((value, name) => {
-      formValues[name] = value;
-    });
 
     // Виводимо об'єкт з даними в консоль
     console.log(formValues);
