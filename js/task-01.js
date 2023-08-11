@@ -12,7 +12,7 @@
   categoriesItems.forEach((item) => {
 
     // Отримуємо заголовок елементу (h2) та усі підкатегорії (li) в ньому
-    const categoryName = item.querySelector("h2").textContent;
+    const categoryName = item['children'][0].textContent;
     const numberOfSubCategories = item['children'][1]['children'].length;
 
     console.log(`Category: ${categoryName}`);

@@ -8,8 +8,9 @@ function changeFontSize() {
   textSpan.style.fontSize = `${fontSizeValue}px`;
 }
 
+// Виклик функції один раз для встановлення початкового значення
+changeFontSize();
+
 // Додаємо обробник події input до поля вводу
 fontSizeControl.addEventListener("input", changeFontSize);
 
-// Виклик функції один раз для встановлення початкового значення
-changeFontSize();
